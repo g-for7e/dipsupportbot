@@ -23,7 +23,7 @@ def get_response(msg):
     Final_text = response.query_result.fulfillment_text
     Invalid_out = "Дождитесь ответа специалиста."
 
-    if detect = true:
+    if detect:
         return final_text
     else:
         return Invalid_out
