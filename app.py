@@ -4,6 +4,10 @@ import telegram
 from telebot.credentials import bot_token, bot_user_name,URL
 from telebot.mastermind import get_response
 
+import os
+import dialogflow
+from google.api_core.exceptions import InvalidArgument
+
 
 #global botA
 global TOKEN
@@ -30,8 +34,8 @@ def respond():
 
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
-    s = telegram.bot(token = TOKEN).setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
-    if s:
+#    s = telegram.bot(token = TOKEN).setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
+    if telegram.bot(token = TOKEN).setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN)):
         return "webhook setup ok"
     else:
         return "webhook setup failed"
