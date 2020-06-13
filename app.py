@@ -1,20 +1,21 @@
 from flask import Flask, request
-from telegram import telegram
+import telegram
+from telegram import bot
 from telebot.credentials import bot_token, bot_user_name,URL
 from telebot.mastermind import get_response
 
 
-global bot
+global botA
 global TOKEN
 TOKEN = bot_token
-bot = telegram.bot(token = TOKEN)
+botA = bot(token = TOKEN)
 
 app = Flask(__name__)
 
 @app.route('/{}'.format(TOKEN), methods=['POST'])
 def respond():
     # retrieve the message in JSON and then transform it to Telegram object
-    update = telegram.Update.de_json(request.get_json(force=True), bot)
+    update = telegram.Update.de_json(request.get_json(force=True), botA)
 
     chat_id = update.message.chat.id
     msg_id = update.message.message_id
@@ -24,7 +25,7 @@ def respond():
     print("got text message :", text)
 
     response = get_response(text)
-    bot.sendMessage(chat_id=chat_id, text=response, reply_to_message_id=msg_id)
+    botA.sendMessage(chat_id=chat_id, text=response, reply_to_message_id=msg_id)
 
     return 'ok'
 
