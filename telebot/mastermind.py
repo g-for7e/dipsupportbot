@@ -3,7 +3,7 @@ import dialogflow
 from google.api_core.exceptions import InvalidArgument
 
 def get_response(msg):
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = '\\Users\G-FOR7E\Documents\Support-626cf302babc.json'
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 'Google_key.json'
 
 DIALOGFLOW_PROJECT_ID = 'support-tykfrc'
 DIALOGFLOW_LANGUAGE_CODE = 'ru'
