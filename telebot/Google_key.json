@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "support-tykfrc",
+  "private_key_id": "626cf302babcdb61d7a5d03f478fa84431e87220",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCNHvSO0wdEQpwr\nl8y0JE/ksEcshfhW8uSFd0QxMjV8BdA+KjVlEBgXVvMhmyxkOBDTV3byYk9Eh5nk\nGtv8DVMq+6eNNo1e47Nx2iFLs5s5C1s3YA/VWta+LZwDD9F9/8INRbKYewesJ6aS\nQjUWSm5hSQqGcj44F/UfDxibyYxEJbyh5yX1m7+JjkaSEqTVX2VjcyPaTV4Y2iCz\nlNY2RMIG5saF/cgIBUYt1+hZHhWKhTNbjaOOBwqtxU8LgwvXcQYmOvS9X0+BVDTj\nFwgmDZYCZdXH4SCpkxvocwKMtI24F6JbPgg+BzlZ1UDNZetaPFHDBQmaz7lUOC46\nmw2ljNJ3AgMBAAECggEAFd+MbG7NG4lvh1o6Aln2gC3Kel4xhdiUDxPTYAS2QYjt\nJBWKvSVndoalnLnegZInGXrfFuah/q897Rs0qbavA2SKLdscwm5sq+LxcjhegNL/\nym97RMiVrFiJa/gRsoPn4gLBkdzP7aEfsl/Mtq3GuhGGLhybBDrCZZQDbnIo6Y7s\n30aWQ+q3Tcn8iZRNCzUaYXtvtr9Si3GToqBGlJ0iDaAp13Fnbn/aYKqaTtzffPIt\nwfWhhF4VGP6cPrZJzA0Uc+gxkTsF6s3ZBV42Av6y2qmpLtUTTHE8j7fY7n5EKi5N\nnk3Si6zM3Gy86JwtN3lJg9Qlo6/mNsTrkgWqywB8wQKBgQDEqX9Kh2jZwY/VhsvE\nNI9TxPNGCUaz1hJFyQ6FiXiugnX9JnYJvEhLO2Jmft7HT1Q6BXdjpT3KE9xL9iQT\n4SRghu3M0mXUZDKT0Dy/8Gq1MV3YB/JwQwcIpNXwDO61GJyFL5KTSIROMqM+T0H4\naxzgI1/vwrMr8tSCmoRwZQwScQKBgQC3s13JueFdOZ8evvHUseVZet5kvgxUAD6u\nAFoHxNjPwXlReQ2xsod628CvVH8oe8RJOPgSMXpvP3FsZMssHw3H7BmoG9nmOdEj\nlqCI/4kGYiFZHnuqKaVnKX6C4/7WCobDImjaLqKb40LpaH1rdTvyhyhDu9jDCx7C\nle0Ppr1XZwKBgQCnQejKwCOCn8buuXfv5SvI+QZWGGmTZYug4oCBPgvvj3E93koh\nuYpawaTMuzZJmMRvnFqP2ueUSBPiXvMMHT1NAzSYMJD+dEE3ybEBJT374IKJyyh8\nJeWDin2Rbc5PIyFrfKxSqygrQZHo2oum9aJXVn6vcY3k4N+wPC5LUQVVYQKBgQC0\nwqK/JVFFUrXooyuDh6mO6wB7UScAYV1MCryMeH5/sHmYWe3HtUzq7+IipJqbU25K\nPuybumQno94QMv5ZZBVDbGeyq/U2Ph41TrqZFBnZViZKc1xsjJ5dbM84LPFN3P3O\ndcWHK+yGSJJG6rK/UpSyiZxtSiJ5ii+yeaTTidc2cQKBgDfG1d2rKQk+x6BTYEWP\nFkPeMsf/9SgNFmLF5oJzf6rd+WMgCEikMqfR4oo8ywODfqmN5CQYRVG/Gb/teK6b\nyOWkshRTG5qK19ILdJ2//OV0oQdWJqPaVQu4Yvb9qaTIamW6rz1RZbk4UXgVEeVy\nC5DCC9jqaelqklWQA5Zm01yq\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-ortlaq@support-tykfrc.iam.gserviceaccount.com",
+  "client_id": "107556847077227406591",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-ortlaq%40support-tykfrc.iam.gserviceaccount.com"
+}
