@@ -7,7 +7,7 @@ from telebot.mastermind import get_response
 global bot
 global TOKEN
 TOKEN = bot_token
-bot = telegram.Bot(token=TOKEN)
+bot = telegram.bot(token = TOKEN)
 
 app = Flask(__name__)
 
