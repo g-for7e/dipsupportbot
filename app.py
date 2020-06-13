@@ -1,5 +1,5 @@
 from flask import Flask, request
-import telegram
+from telegram import telegram
 from telebot.credentials import bot_token, bot_user_name,URL
 from telebot.mastermind import get_response
 
