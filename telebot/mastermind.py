@@ -24,6 +24,6 @@ def get_response(text_to_be_analyzed):
     Invalid_out = "Дождитесь ответа специалиста."
 
     if detect:
-        return final_text
+        return Final_text
     else:
         return Invalid_out
