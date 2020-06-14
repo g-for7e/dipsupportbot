@@ -1,8 +1,10 @@
 from flask import Flask, request
 import telegram
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from telegram import bot
 from telebot.credentials import bot_token, bot_user_name,URL
 from telebot.mastermind import get_response
+
 
 import os
 import dialogflow
@@ -13,7 +15,8 @@ from google.api_core.exceptions import InvalidArgument
 global TOKEN
 TOKEN = bot_token
 PORT = int(os.environ.get('PORT', '8443'))
-updater = Updater(TOKEN)
+updater = Updater('1143220225:AAH6hcqu3DjFq3tqDJYP9HCNfuQBsqFW11Q', use_context=True) #Токен API к Telegram
+dispatcher = updater.dispatcher
 #botA = botA(token = TOKEN)
 
 app = Flask(__name__)
@@ -37,7 +40,7 @@ def respond():
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
     updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
-    updater.bot.set_webhook("https://<appname>.herokuapp.com/" + TOKEN)
+    updater.bot.set_webhook("https://dipsupport.herokuapp.com/" + TOKEN)
     updater.idle()
     #s = bot(token = TOKEN).setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
     #if bot(token = TOKEN).setWebhook(url='https://dipsupport.herokuapp.com/' + TOKEN):
