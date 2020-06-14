@@ -1,7 +1,7 @@
 from flask import Flask, request
 import telegram
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from telegram import bot
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from telebot.credentials import bot_token, bot_user_name,URL
 from telebot.mastermind import get_response
 
@@ -14,7 +14,7 @@ from google.api_core.exceptions import InvalidArgument
 #global botA
 global TOKEN
 TOKEN = bot_token
-PORT = int(os.environ.get('PORT', '8443'))
+#PORT = int(os.environ.get('PORT', '8443'))
 updater = Updater('1143220225:AAFTmo2IBybhLYxKNdHlAL-TYdTJHCe4axw', use_context=True) #Токен API к Telegram
 #botA = botA(token = TOKEN)
 
@@ -38,11 +38,11 @@ def respond():
 
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
- #   updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
-    #updater.bot.set_webhook("https://dipsupport.herokuapp.com/" + TOKEN)
-    updater.idle()
+   # bot.Bot(token = TOKEN).start_webhook(listen="0.0.0.0", , url_path=TOKEN)
+    bot.Bot(token = TOKEN).set_webhook("https://dipsupport.herokuapp.com/" + TOKEN)
+   # updater.idle()
     #s = bot(token = TOKEN).setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
-    if updater.bot.set_webhook("https://dipsupport.herokuapp.com/" + TOKEN):
+    if bot.Bot(token = TOKEN).set_webhook("https://dipsupport.herokuapp.com/" + TOKEN):
         return "webhook setup ok"
     else:
         return "webhook setup failed"
