@@ -28,7 +28,7 @@ def respond():
     text_to_be_analyzed = update.message.text.encode('utf-8').decode()
 
     response = get_response(text)
-   botA.sendMessage(chat_id=chat_id, text=response, reply_to_message_id=msg_id)
+    botA.sendMessage(chat_id=chat_id, text=response, reply_to_message_id=msg_id)
 
     return 'ok'
 
