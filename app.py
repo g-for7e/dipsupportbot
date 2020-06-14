@@ -16,7 +16,6 @@ global TOKEN
 TOKEN = bot_token
 PORT = int(os.environ.get('PORT', '8443'))
 updater = Updater('1143220225:AAFTmo2IBybhLYxKNdHlAL-TYdTJHCe4axw', use_context=True) #Токен API к Telegram
-dispatcher = updater.dispatcher
 #botA = botA(token = TOKEN)
 
 app = Flask(__name__)
@@ -24,7 +23,7 @@ app = Flask(__name__)
 @app.route('/{}'.format(TOKEN), methods=['POST'])
 def respond():
     # retrieve the message in JSON and then transform it to Telegram object
-    update = telegram.Update.de_json(request.get_json(force=True), bot(token = TOKEN))
+    update = telegram.Update.de_json(request.get_json(force=True), updater.bot)
 
     chat_id = update.message.chat.id
     msg_id = update.message.message_id
@@ -33,7 +32,7 @@ def respond():
     text_to_be_analyzed = update.message.text.encode('utf-8').decode()
 
     response = get_response(text)
-    bot(token = TOKEN).sendMessage(chat_id=chat_id, text=response, reply_to_message_id=msg_id)
+    updater.bot.sendMessage(chat_id=chat_id, text=response, reply_to_message_id=msg_id)
 
     return 'ok'
 
