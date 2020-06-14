@@ -38,14 +38,14 @@ def respond():
 
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
-    updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
-    updater.bot.set_webhook("https://dipsupport.herokuapp.com/" + TOKEN)
+ #   updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
+    #updater.bot.set_webhook("https://dipsupport.herokuapp.com/" + TOKEN)
     updater.idle()
     #s = bot(token = TOKEN).setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
-    #if bot(token = TOKEN).setWebhook(url='https://dipsupport.herokuapp.com/' + TOKEN):
-    #    return "webhook setup ok"
-    #else:
-   #     return "webhook setup failed"
+    if updater.bot.set_webhook("https://dipsupport.herokuapp.com/" + TOKEN):
+        return "webhook setup ok"
+    else:
+        return "webhook setup failed"
 
 @app.route('/')
 def index():
