@@ -23,7 +23,7 @@ app = Flask(__name__)
 @app.route('/{}'.format(TOKEN), methods=['POST'])
 def respond():
     # retrieve the message in JSON and then transform it to Telegram object
-    update = telegram.Update.de_json(request.get_json(force=True), updater.bot)
+    update = telegram.Update.de_json(request.get_json(force=True), bot.Bot(token = TOKEN))
 
     chat_id = update.message.chat.id
     msg_id = update.message.message_id
@@ -32,17 +32,17 @@ def respond():
     text_to_be_analyzed = update.message.text.encode('utf-8').decode()
 
     response = get_response(text)
-    updater.bot.sendMessage(chat_id=chat_id, text=response, reply_to_message_id=msg_id)
+    bot.Bot(token = TOKEN).sendMessage(chat_id=chat_id, text=response, reply_to_message_id=msg_id)
 
     return 'ok'
 
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
    # bot.Bot(token = TOKEN).start_webhook(listen="0.0.0.0", , url_path=TOKEN)
-    bot.Bot(token = TOKEN).set_webhook("https://dipsupport.herokuapp.com/" + TOKEN)
-   # updater.idle()
+    s = bot.Bot(token = TOKEN).set_webhook("https://dipsupport.herokuapp.com/" + TOKEN)
+    updater.idle()
     #s = bot(token = TOKEN).setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
-    if bot.Bot(token = TOKEN).set_webhook("https://dipsupport.herokuapp.com/" + TOKEN):
+    if s:
         return "webhook setup ok"
     else:
         return "webhook setup failed"
