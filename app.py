@@ -34,7 +34,7 @@ def respond():
 
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
-    s = telegram.bot.token(TOKEN)      #.setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
+    s = telegram.bot(token = TOKEN)      #.setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
     if s.setWebhook(url='https://dipsupport.herokuapp.com/' + TOKEN):
         return "webhook setup ok"
     else:
