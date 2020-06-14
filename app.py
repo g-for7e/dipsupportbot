@@ -15,7 +15,7 @@ from google.api_core.exceptions import InvalidArgument
 global TOKEN
 TOKEN = bot_token
 PORT = int(os.environ.get('PORT', '8443'))
-updater = Updater('1143220225:AAH6hcqu3DjFq3tqDJYP9HCNfuQBsqFW11Q', use_context=True) #Токен API к Telegram
+updater = Updater('1143220225:AAFTmo2IBybhLYxKNdHlAL-TYdTJHCe4axw', use_context=True) #Токен API к Telegram
 dispatcher = updater.dispatcher
 #botA = botA(token = TOKEN)
 
