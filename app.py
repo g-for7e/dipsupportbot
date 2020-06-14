@@ -12,6 +12,8 @@ from google.api_core.exceptions import InvalidArgument
 #global botA
 global TOKEN
 TOKEN = bot_token
+PORT = int(os.environ.get('PORT', '8443'))
+updater = Updater(TOKEN)
 #botA = botA(token = TOKEN)
 
 app = Flask(__name__)
@@ -34,11 +36,14 @@ def respond():
 
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
+    updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
+    updater.bot.set_webhook("https://<appname>.herokuapp.com/" + TOKEN)
+    updater.idle()
     #s = bot(token = TOKEN).setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
-    if bot(token = TOKEN).setWebhook(url='https://dipsupport.herokuapp.com/' + TOKEN):
-        return "webhook setup ok"
-    else:
-        return "webhook setup failed"
+    #if bot(token = TOKEN).setWebhook(url='https://dipsupport.herokuapp.com/' + TOKEN):
+    #    return "webhook setup ok"
+    #else:
+   #     return "webhook setup failed"
 
 @app.route('/')
 def index():
