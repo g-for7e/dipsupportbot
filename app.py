@@ -39,7 +39,7 @@ def respond():
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
    # bot.Bot(token = TOKEN).start_webhook(listen="0.0.0.0", , url_path=TOKEN)
-    s = bot.Bot(token = TOKEN).set_webhook("https://dipsupport.herokuapp.com/" + TOKEN)
+    s = bot.Bot(token = TOKEN).set_webhook(url = "https://dipsupport.herokuapp.com/1143220225:AAFTmo2IBybhLYxKNdHlAL-TYdTJHCe4axw")
     updater.idle()
     #s = bot(token = TOKEN).setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
     if s:
