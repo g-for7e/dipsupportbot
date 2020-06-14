@@ -31,7 +31,7 @@ def respond():
     # Telegram understands UTF-8, so encode text for unicode compatibility
     text_to_be_analyzed = update.message.text.encode('utf-8').decode()
 
-    response = get_response(text)
+    response = get_response(text_to_be_analyzed)
     bot.Bot(token = TOKEN).sendMessage(chat_id=chat_id, text=response, reply_to_message_id=msg_id)
 
     return 'ok'
